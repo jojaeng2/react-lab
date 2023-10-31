@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import CountryList from "./CountryList"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export type CountryType = {
+  no: number;
+  country: string;
+  visited: boolean;
 }
 
-export default App;
+const App = () => {
+  let list: Array<CountryType> = [
+    {no:1, country:"1", visited:false},
+    {no:2, country:"2", visited:true},
+    {no:3, country:"3", visited:false},
+    {no:4, country:"4", visited:false},
+  ];
+
+  return (
+    <div className='container'>
+      <CountryList countries={list}/>
+    </div>
+  )
+}
+
+export default App
